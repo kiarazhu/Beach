@@ -24,12 +24,12 @@ def search():
     searchTerm = request.form['query']
     result = queryBeach(searchTerm)
 
-    html_table = "<table><tr><th>Location<\\th><th>Lifeguard Information<\\th><\\tr>"
+    html_table = "<table><tr><th>Location</th><th>Lifeguard Information</th></tr>"
     for row in result:
         html_table+="<tr><td>"
-        html_table+=row[0] + "<\\td>"
-        html_table+="<td>" + row[1] + "<\\td><\\tr>"
-    html_table+="<\\table>"
+        html_table+=row[0] + "</td>"
+        html_table+="<td>" + row[1] + "</td></tr>\n"
+    html_table+="</table>\n"
     print(html_table)
     html = ""
     adding_table=False
@@ -37,17 +37,17 @@ def search():
         for line in htmlfile:
             if not adding_table:
                 html += line
-            if line.find("<--start table -->")!=-1:
+            if line.find("<!--start table-->")!=-1:
                 html+=html_table
                 adding_table=True
-            if line.find("<--end table-->")!=-1:
+            if line.find("<!--end table-->")!=-1:
                 adding_table=False
-                html+=line
-    write_file = open("templates/index.html", "w")
+                html+="\n <!--end table--> \n"
+    write_file = open("templates/index2.html", "w")
     write_file.write(html)
     write_file.close()
     #return html
-    return render_template('index.html', searchReturn = result, table = html_table)
+    return render_template('index2.html', searchReturn = result, table = html_table)
 
 
 if __name__ == '__main__':
