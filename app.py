@@ -19,37 +19,41 @@ def queryBeach(searchTerm):
 def hello_world():  # put application's code here
     return render_template('index.html', message = "")
 
+@app.route("/searchTab")
+def switchToSearch():
+    print("a")
+    return render_template('search.html')
 @app.route('/search', methods = ['POST'])
 def search():
     print(request.form['query'])
     searchTerm = request.form['query']
     result = queryBeach(searchTerm)
 
-    return render_template('index.html', searchResult = copy.deepcopy(result))
+    return render_template('search.html', searchResult = copy.deepcopy(result), tabIndex = 'Tab2')
 
 
-    html_table = "<table><tr><th>Location</th><th>Lifeguard Information</th></tr>"
-    for row in result:
-        html_table+="<tr><td>"
-        html_table+=row[0] + "</td>"
-        html_table+="<td>" + row[1] + "</td></tr>\n"
-    html_table+="</table>\n"
-    print(html_table)
-    html = ""
-    adding_table=False
-    with open("templates/index.html", mode="r") as htmlfile:
-        for line in htmlfile:
-            if not adding_table:
-                html += line
-            if line.find("<!--start table-->")!=-1:
-                html+=html_table
-                adding_table=True
-            if line.find("<!--end table-->")!=-1:
-                adding_table=False
-                html+="\n <!--end table--> \n"
-    write_file = open("templates/index.html", "w")
-    write_file.write(html)
-    write_file.close()
+    #html_table = "<table><tr><th>Location</th><th>Lifeguard Information</th></tr>"
+    #for row in result:
+    #    html_table+="<tr><td>"
+    #    html_table+=row[0] + "</td>"
+    #    html_table+="<td>" + row[1] + "</td></tr>\n"
+    #html_table+="</table>\n"
+    #print(html_table)
+    #html = ""
+    #adding_table=False
+    #with open("templates/index.html", mode="r") as htmlfile:
+    #    for line in htmlfile:
+    #        if not adding_table:
+    #            html += line
+    #        if line.find("<!--start table-->")!=-1:
+    #            html+=html_table
+    #            adding_table=True
+    #        if line.find("<!--end table-->")!=-1:
+    #            adding_table=False
+    #            html+="\n <!--end table--> \n"
+    #write_file = open("templates/index.html", "w")
+    #write_file.write(html)
+    #write_file.close()
     #return html
 
 
