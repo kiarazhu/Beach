@@ -85,7 +85,7 @@ p {
 
 <div id="Tab1" class="tabcontent">
   <h3>Safety Signs and Flags</h3>
-  <p>London is the capital city of England.</p>
+  <p>{{text}}</p>
 </div>
 
 <div id="Tab2" class="tabcontent">
@@ -95,10 +95,13 @@ p {
         <input type = "text" name = "query" placeholder = "Search for a beach" />
         <button type = "submit">Submit</button>
   </form>
+
   <!--start table-->
-<table><tr><th>Location</th><th>Lifeguard Information</th></tr><tr><td>Alma Bay Magnetic Island</td><td>There is one lifeguard and no stinger nets in use on this beach</td></tr>
-<tr><td>Balgal Beach</td><td>There is one lifeguard present during Christmas and Easter holidays. Stinger nets are in use on this beach</td></tr>
-<tr><td>Horseshoe Bay Magnetic Island</td><td>There is one lifeguard and stinger nets are in use on this beach</td></tr>
+
+<table><tr><th>Location</th><th>Lifeguard Information</th></tr>
+{% for row in searchResult %}
+  <tr><td>{{row[0]}}</td><td>{{row[1]}}</td></tr>
+{% endfor %}
 </table>
 
  <!--end table--> 

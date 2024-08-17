@@ -1,3 +1,4 @@
+import copy
 from operator import contains
 
 from flask import Flask, render_template, request
@@ -24,6 +25,9 @@ def search():
     searchTerm = request.form['query']
     result = queryBeach(searchTerm)
 
+    return render_template('index.html', searchResult = copy.deepcopy(result))
+
+"""
     html_table = "<table><tr><th>Location</th><th>Lifeguard Information</th></tr>"
     for row in result:
         html_table+="<tr><td>"
@@ -43,11 +47,11 @@ def search():
             if line.find("<!--end table-->")!=-1:
                 adding_table=False
                 html+="\n <!--end table--> \n"
-    write_file = open("templates/index2.html", "w")
+    write_file = open("templates/index.html", "w")
     write_file.write(html)
     write_file.close()
     #return html
-    return render_template('index2.html', searchReturn = result, table = html_table)
+    """
 
 
 if __name__ == '__main__':
