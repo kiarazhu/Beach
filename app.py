@@ -5,7 +5,7 @@ from flask import Flask, render_template, request
 import sqlite3
 import jinja2
 app = Flask(__name__)
-
+##
 text = {"Chinese": ["为了安全游泳，请在旗帜之间游泳，并与朋友一起。不在超过您舒适范围的深水或波涛汹涌的水域游泳。如果不确定，可以向救生员询问有关海况的信息！",
                     "澳大利亚的海滩有标志帮助您了解是否适合游泳：",
                     "如果您在水中遇到困难可以举起手臂并从一侧挥到另一侧向救生员示意求助。",
