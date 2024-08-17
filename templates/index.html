@@ -157,39 +157,62 @@ th {
       <a type="langbutton" onclick="changelang(event, 2)">Chinese</a>
       <a type="langbutton" onclick="changelang(event, 3)">French</a>
     </div>
+    </div>
+
+  <form action="\switchLang" method="POST">
+  <label for="lang">Language</label>
+  <select name="lang" id="lang">
+    <option value="English">English</option>
+    <option value="Chinese">Chinese</option>
+  </select>
+    <input type="submit" value="Submit"/>
+    </form>
   <p>
+    {{text[0]}}
       To swim safely, swim between the flags, with a friend. Don’t swim in water that is deeper or rougher than you are comfortable.
       You can ask the lifeguards for information about the surf conditions if you are unsure!
   </p>
 <hr style="height:2px;border-width:0;color:white;background-color:white">
   <p>
+    {{text[1]}}
       Beaches in Australia have signs to help you understand whether it is safe to swim or not:
   </p>
 
-  </div>
+
     <table>
-    <tr><td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/patrolled-offline.jpg" alt="Red & Yellow Flags" style="width:300px;height:200px;"></td><td>Red & Yellow Flags: Swim between the flags. This area will be safe to swim in.</td>
-    <td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/patrol_red-offline.jpg" alt="Red Flag" style="width:300px;height:200px;"></td><td>Red Flag: No Swimming.</td></tr>
-    <tr><td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/patrol_yellow-offline.jpg" alt="Yellow Flag" style="width:300px;height:200px;"></td><td>Yellow Flag: Caution required. Potential hazards.</td>
-    <td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/patrol_red_white-offline.jpg" alt="Red & White Flag" style="width:300px;height:200px;"></td><td>Red & White Flag: Evacuate the water.</td></tr>
-    <tr><td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/patrol_black_white-offline.jpg" alt="Black & White Flag" style="width:300px;height:200px;"></td><td>Black & White Flag: Surfcraft riding area boundary.</td></tr>
+    <tr><td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/patrolled-offline.jpg" alt="Red & Yellow Flags" style="width:300px;height:200px;"></td>
+      <td>{{flags["RedYellow"]}} Red & Yellow Flags: Swim between the flags. This area will be safe to swim in.</td>
+    <td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/patrol_red-offline.jpg" alt="Red Flag" style="width:300px;height:200px;"></td>
+      <td>{{flags["Red"]}} Red Flag: No Swimming.</td></tr>
+    <tr><td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/patrol_yellow-offline.jpg" alt="Yellow Flag" style="width:300px;height:200px;"></td>
+      <td>{{flags["Yellow"]}} Yellow Flag: Caution required. Potential hazards.</td>
+    <td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/patrol_red_white-offline.jpg" alt="Red & White Flag" style="width:300px;height:200px;"></td>
+      <td>{{flags["RedWhite"]}} Red & White Flag: Evacuate the water.</td></tr>
+    <tr><td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/patrol_black_white-offline.jpg" alt="Black & White Flag" style="width:300px;height:200px;"></td>
+      <td>{{flags["BlackWhite"]}} Black & White Flag: Surfcraft riding area boundary.</td></tr>
     </table>
 
     <table>
-    <tr><td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/exclamation-offline.jpg" alt="Exclamation Sign" style="width:150px;height:150px;"></td><td>Warning</td>
-    <td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/swimming_not_advised-offline.jpg" alt="Swimming Not Advised Sign" style="width:150px;height:150px;"></td><td>Swimming not advised</td>
-    <td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/strong_waves-offline.jpg" alt="Strong Waves Sign" style="width:150px;height:150px;"></td><td>Large waves</td>
-    <td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/stingers-offline.jpg" alt="Stingers Sign" style="width:150px;height:150px;"></td><td>Marine Stingers</td></tr>
+    <tr><td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/exclamation-offline.jpg" alt="Exclamation Sign" style="width:150px;height:150px;"></td>
+      <td>{{warnings["Warning"]}} Warning</td>
+    <td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/swimming_not_advised-offline.jpg" alt="Swimming Not Advised Sign" style="width:150px;height:150px;"></td>
+      <td>{{warnings["NoSwim"]}} Swimming not advised</td>
+    <td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/strong_waves-offline.jpg" alt="Strong Waves Sign" style="width:150px;height:150px;"></td>
+      <td>{{warnings["Waves"]}} Large waves</td>
+    <td><img src="https://nanoslsa.blob.core.windows.net/beachsafe/media/article/13/conversions/stingers-offline.jpg" alt="Stingers Sign" style="width:150px;height:150px;"></td>
+      <td>{{warnings["Stingers"]}} Marine Stingers</td></tr>
     </table>
-        <p>{{text}}</p>
+
 
 
 <hr style="height:2px;border-width:0;color:white;background-color:white">
 
-  <p>If you are in trouble in the water then you can signal for help from a
+  <p>{{text[2]}}
+    If you are in trouble in the water then you can signal for help from a
       lifeguard by raising your arm and waving it from side to side.</p>
 
-<p>Australian beaches can contain different wildlife species, some of which can be dangerous.
+<p>{{text[3]}}
+  Australian beaches can contain different wildlife species, some of which can be dangerous.
     If it is alive, give it space.</p>
 
 </div>
