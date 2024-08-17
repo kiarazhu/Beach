@@ -27,7 +27,7 @@ def search():
 
     return render_template('index.html', searchResult = copy.deepcopy(result))
 
-"""
+
     html_table = "<table><tr><th>Location</th><th>Lifeguard Information</th></tr>"
     for row in result:
         html_table+="<tr><td>"
@@ -51,10 +51,8 @@ def search():
     write_file.write(html)
     write_file.close()
     #return html
-    """
 
 
 if __name__ == '__main__':
     app.run()
-
 
