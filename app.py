@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 
 def queryBeach(searchTerm):
-    query = f"SELECT * FROM Beach WHERE location LIKE '%{searchTerm}%';"
+    query = f"SELECT DISTINCT location, life_guard_service  FROM Beach WHERE location LIKE '%{searchTerm}%';"
     connection = sqlite3.connect("beach.db")
     cursor = connection.cursor()
     result = cursor.execute(query).fetchall()
@@ -23,8 +23,8 @@ def search():
     html_table = "<table><tr><th>Location<\\th><th>Lifeguard Information<\\th><\\tr>"
     for row in result:
         html_table+="<tr><td>"
-        html_table+=row[2] + "<\\td>"
-        html_table+="<td>" + row[6] + "<\\td><\\tr>"
+        html_table+=row[0] + "<\\td>"
+        html_table+="<td>" + row[1] + "<\\td><\\tr>"
     html_table+="<\\table>"
     print(html_table)
     return html_table
