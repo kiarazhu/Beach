@@ -153,9 +153,9 @@ th {
   <div class="dropdown">
     <button onclick="myFunction()" class="dropbtn">Select Language</button>
     <div id="myDropdown" class="dropdown-content">
-      <a type="button">English</a>
-      <a type="button">Chinese</a>
-      <a type="button">French</a>
+      <a type="langbutton" onclick="changelang(event, 1)">English</a>
+      <a type="langbutton" onclick="changelang(event, 2)">Chinese</a>
+      <a type="langbutton" onclick="changelang(event, 3)">French</a>
     </div>
   <p>
       To swim safely, swim between the flags, with a friend. Don’t swim in water that is deeper or rougher than you are comfortable.
@@ -256,6 +256,13 @@ window.onclick = function(event) {
       }
     }
   }
+}
+
+function changelang(event, int) {
+    if (int==1) {
+        var text = hello;
+
+    }
 }
 
 </script>
