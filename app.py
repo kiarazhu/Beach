@@ -69,7 +69,11 @@ def search():
     searchTerm = request.form['query']
     result = queryBeach(searchTerm)
 
-    return render_template('search.html', searchResult = copy.deepcopy(result), tabIndex = 'Tab2')
+    return render_template('index.html', searchResult = copy.deepcopy(result), tabIndex = 'Tab2',
+                           text=text["English"],
+                           flags=flags["English"],
+                           warnings=warnings["English"]
+                           )
 
 
     #html_table = "<table><tr><th>Location</th><th>Lifeguard Information</th></tr>"
