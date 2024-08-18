@@ -3,7 +3,7 @@ from operator import contains
 
 from flask import Flask, render_template, request
 import sqlite3
-import jinja2
+
 app = Flask(__name__)
 ##
 text = {"Chinese": ["为了安全游泳，请在旗帜之间游泳，并与朋友一起。不在超过您舒适范围的深水或波涛汹涌的水域游泳。如果不确定，可以向救生员询问有关海况的信息！",
@@ -135,6 +135,6 @@ def search():
     #return html
 
 
-if __name__ == '__main__':
-    app.run()
-
+#if __name__ == '__main__':
+#    app.run()
+app.run()
