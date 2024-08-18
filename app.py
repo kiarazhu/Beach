@@ -17,7 +17,11 @@ text = {"Chinese": ["为了安全游泳，请在旗帜之间游泳，并与朋�
         "German": ["Um sicher zu schwimmen, schwimmen Sie zwischen den Flaggen, zusammen mit einem Freund. Schwimmen Sie nicht in Wasser, das tiefer oder rauer ist, als es Ihnen angenehm ist. Wenn Sie unsicher sind, können Sie die Rettungsschwimmer nach den Surfbedingungen fragen!",
                    "An australischen Stränden gibt es Schilder, die Ihnen helfen zu verstehen, ob es sicher ist, zu schwimmen oder nicht:",
                    "Wenn Sie im Wasser in Schwierigkeiten geraten können Sie durch Heben und Winken Ihres Arms von einer Seite zur anderen um Hilfe signalisieren.",
-                   "Australische Strände können verschiedene Wildtierarten enthalten, von denen einige gefährlich sein können. Wenn es lebt, halten Sie Abstand."]
+                   "Australische Strände können verschiedene Wildtierarten enthalten, von denen einige gefährlich sein können. Wenn es lebt, halten Sie Abstand."],
+        "French": ["Pour nager en toute sécurité, nagez entre les drapeaux, avec un ami. Ne nagez pas dans une eau plus profonde ou plus agitée que ce que vous pouvez gérer. Si vous avez des doutes, vous pouvez demander des informations aux sauveteurs sur les conditions de surf.",
+                   "Les plages en Australie ont des panneaux pour vous aider à comprendre s'il est sûr de nager ou non:",
+                   "En cas de problème dans l'eau Vous pouvez signaler un besoin d'aide à un sauveteur en levant le bras et en le balançant d'un côté à l'autre.",
+                   "Les plages australiennes peuvent abriter différentes espèces de faune sauvage, dont certaines peuvent être dangereuses. Si elle est vivante, gardez vos distances."]
 
         }
 flags = {"English": {"RedYellow": "Red & Yellow Flags: Swim between the flags. This area will be safe to swim in.",
@@ -25,6 +29,12 @@ flags = {"English": {"RedYellow": "Red & Yellow Flags: Swim between the flags. T
                      "Yellow": "Yellow Flag: Caution required. Potential hazards.",
                      "RedWhite": "Red & White Flag: Evacuate the water.",
                      "BlackWhite": "Black & White Flag: Surfcraft riding area boundary"},
+
+         "French": { "RedYellow": "Drapeaux Rouge & Jaune : Nagez entre les drapeaux. Cette zone est sûre pour nager.",
+                     "Red": "Drapeau Rouge : Interdiction de nager.",
+                     "RedWhite": "Drapeau Rouge & Blanc : Évacuez l'eau immédiatement.",
+                     "BlackWhite": "Drapeau Noir & Blanc : Limite de la zone de surf."},
+
          "Chinese": {"RedYellow": "红黄旗：在旗帜之间游泳。这一区域适合游泳。",
                      "Red": "红旗：禁止游泳。",
                      "Yellow": "黄旗：需要谨慎。可能存在潜在的危险。",
@@ -48,7 +58,12 @@ warnings = {"English": {"Warning": "Warning",
             "German": {"Warning": "Warnung",
                        "NoSwim": "Schwimmen nicht empfohlen",
                        "Waves": "Hohe Wellen vorhanden.",
-                       "Stingers": "Gefährliche Quallen vorhanden."}
+                       "Stingers": "Gefährliche Quallen vorhanden."},
+            "French": {"Warning": "Avertissement",
+                       "NoSwim": "La baignade n'est pas recommandée.",
+                       "Waves": "Présence de grosses vagues.",
+                       "Stingers": "Présence de méduses dangereuses."}
+
 
             }
 
