@@ -9,22 +9,12 @@
 {% extends "template.html" %}
 {% block content %}
 
-<div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'Tab1')"> Safety Signs and Flags </button>
-  <button class="tablinks" onclick="openTab(event, 'Tab2')">Paris</button>
-  <button class="tablinks" onclick="openTab(event, 'Tab3')">Bibliography</button>
-</div>
 
-<div id="Tab1" class="tabcontent">
+
+
   <h3>Safety Signs and Flags</h3>
-  <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Select Language</button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="#english">English</a>
-      <a href="#chinese">中文</a>
-      <a href="#french">French</a>
-    </div>
-</div>
+
+
 
   <form action="\switchLang" method="POST">
   <label for="lang">Language</label>
@@ -90,33 +80,6 @@
     If it is alive, give it space.</p>
 
 </div>
-
-
-<div id="Tab2" class="tabcontent">
-  <h3>Search</h3>
-
-  <form action = "/search" method = "POST">
-        <input type = "text" name = "query" placeholder = "Search for a beach" />
-        <button type = "submit">Search</button>
-  </form>
-
-  <!--start table-->
-
-<table><tr><th>Location</th><th>Lifeguard Information</th></tr>
-{% for row in searchResult %}
-  <tr><td>{{row[0]}}</td><td>{{row[1]}}</td></tr>
-{% endfor %}
-</table>
-
- <!--end table--> 
-</div>
-
-<div id="Tab3" class="tabcontent">
-  <h3>Bibliography</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
-
 
 <script>
 function openTab(evt, tabName) {

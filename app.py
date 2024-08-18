@@ -85,7 +85,9 @@ def index():  # put application's code here
 @app.route('/search')
 def searchScreen():
     return render_template('search.html')
-
+@app.route('/moreInfo')
+def moreInfo():
+    return render_template('moreInfo.html')
 @app.route('/switchLang', methods=['POST'])
 def switch():
     print(request.form['lang'])
