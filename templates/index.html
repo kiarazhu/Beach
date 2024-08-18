@@ -114,8 +114,9 @@ p {
 </head>
 <body>
 
-<h1>Beach Project</h1>
-
+{% extends "template.html" %}
+{% block content %}
+<a href="{{ url_for('search') }}">Search</a>
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'Tab1')"> Safety Signs and Flags </button>
   <button class="tablinks" onclick="openTab(event, 'Tab2')">Paris</button>
@@ -263,6 +264,8 @@ window.onclick = function(event) {
 }
 
 </script>
+
+{% endblock %}
 </body>
 </html>
 

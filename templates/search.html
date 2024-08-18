@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <body>
+{% extends "template.html" %}
+{% block content %}
 <h3>Search</h3>
 
   <form action = "/search" method = "POST">
@@ -21,5 +23,7 @@
 </table>
 
  <!--end table-->
+
+{% endblock %}
 </body>
 </html>

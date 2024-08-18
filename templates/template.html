@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Beach Project</h1>
+<div class="container">
+  <a class="active" href="{{ url_for('index') }}">Safety Signs and Flags</a>
+  <a class href="{{ url_for('search') }}">Search</a>
+</div>
+</body>
+{% block content %}
+{% endblock %}
+</html>

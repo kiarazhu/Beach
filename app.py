@@ -76,12 +76,15 @@ def queryBeach(searchTerm):
 
 
 @app.route('/')
-def hello_world():  # put application's code here
+def index():  # put application's code here
     return render_template('index.html',
                            text=text["English"],
                            flags=flags["English"],
                            warnings=warnings["English"])
 
+@app.route('/search')
+def searchScreen():
+    return render_template('search.html')
 
 @app.route('/switchLang', methods=['POST'])
 def switch():
@@ -93,17 +96,14 @@ def switch():
                            warnings=warnings[request.form['lang']])
 
 
-@app.route("/searchTab")
-def switchToSearch():
-    print("a")
-    return render_template('search.html')
+
 @app.route('/search', methods = ['POST'])
 def search():
     print(request.form['query'])
     searchTerm = request.form['query']
     result = queryBeach(searchTerm)
 
-    return render_template('index.html', searchResult = copy.deepcopy(result), tabIndex = 'Tab2',
+    return render_template('search.html', searchResult = copy.deepcopy(result), tabIndex = 'Tab2',
                            text=text["English"],
                            flags=flags["English"],
                            warnings=warnings["English"]
@@ -135,6 +135,6 @@ def search():
     #return html
 
 
-#if __name__ == '__main__':
-#    app.run()
+if __name__ == '__main__':
+    app.run()
 #app.run()
