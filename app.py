@@ -13,7 +13,13 @@ text = {"Chinese": ["为了安全游泳，请在旗帜之间游泳，并与朋�
         "English": ["To swim safely, swim between the flags, with a friend. Don’t swim in water that is deeper or rougher than you are comfortable. You can ask the lifeguards for information about the surf conditions if you are unsure!",
                     "Beaches in Australia have signs to help you understand whether it is safe to swim or not:",
                     "If you are in trouble in the water then you can signal for help from a lifeguard by raising your arm and waving it from side to side.",
-                    "Australian beaches can contain different wildlife species, some of which can be dangerous. If it is alive, give it space."]}
+                    "Australian beaches can contain different wildlife species, some of which can be dangerous. If it is alive, give it space."],
+        "German": ["Um sicher zu schwimmen, schwimmen Sie zwischen den Flaggen, zusammen mit einem Freund. Schwimmen Sie nicht in Wasser, das tiefer oder rauer ist, als es Ihnen angenehm ist. Wenn Sie unsicher sind, können Sie die Rettungsschwimmer nach den Surfbedingungen fragen!",
+                   "An australischen Stränden gibt es Schilder, die Ihnen helfen zu verstehen, ob es sicher ist, zu schwimmen oder nicht:",
+                   "Wenn Sie im Wasser in Schwierigkeiten geraten können Sie durch Heben und Winken Ihres Arms von einer Seite zur anderen um Hilfe signalisieren.",
+                   "Australische Strände können verschiedene Wildtierarten enthalten, von denen einige gefährlich sein können. Wenn es lebt, halten Sie Abstand."]
+
+        }
 flags = {"English": {"RedYellow": "Red & Yellow Flags: Swim between the flags. This area will be safe to swim in.",
                      "Red": "Red Flag: No Swimming.",
                      "Yellow": "Yellow Flag: Caution required. Potential hazards.",
@@ -23,7 +29,13 @@ flags = {"English": {"RedYellow": "Red & Yellow Flags: Swim between the flags. T
                      "Red": "红旗：禁止游泳。",
                      "Yellow": "黄旗：需要谨慎。可能存在潜在的危险。",
                      "RedWhite": "红白旗：立即撤离水域。",
-                     "BlackWhite": "黑白旗：冲浪板区域边界。"}}
+                     "BlackWhite": "黑白旗：冲浪板区域边界。"},
+         "German": {"RedYellow": "Rot-Gelbe Flaggen: Schwimmen Sie zwischen den Flaggen. Dieser Bereich ist sicher zum Schwimmen.",
+                    "Red": "Rote Flagge: Schwimmen verboten.",
+                    "Yellow": "Gelbe Flagge: Vorsicht ist geboten. Mögliche Gefahren.",
+                    "RedWhite": "Rot-Weiße Flagge: Verlassen Sie sofort das Wasser.",
+                    "BlackWhite": "Schwarz-Weiße Flagge: Grenze des Surfbereichs."}
+         }
 
 warnings = {"English": {"Warning": "Warning",
                         "NoSwim": "Swimming not advised",
@@ -32,7 +44,14 @@ warnings = {"English": {"Warning": "Warning",
             "Chinese": {"Warning": "Warning",
                         "NoSwim": "Swimming not advised",
                         "Waves": "Large waves",
-                        "Stingers": "Marine stingers"}}
+                        "Stingers": "Marine stingers"},
+            "German": {"Warning": "Warnung",
+                       "NoSwim": "Schwimmen nicht empfohlen",
+                       "Waves": "Hohe Wellen vorhanden.",
+                       "Stingers": "Gefährliche Quallen vorhanden."}
+
+            }
+
 def queryBeach(searchTerm):
     query = f"SELECT DISTINCT location, life_guard_service  FROM Beach WHERE location LIKE '%{searchTerm}%';"
     connection = sqlite3.connect("beach.db")
